@@ -1,0 +1,39 @@
+{
+  "name": "vite-react",
+  "version": "1.0.0",
+  "description": "a simple vite for react",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --inspect ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yklydxtt/vite-react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "es-module-lexer": "^0.7.1",
+    "es-module-shims": "^0.12.1",
+    "es-react": "^16.13.1",
+    "express": "^4.17.1",
+    "koa": "^2.13.1",
+    "koa-static": "^5.0.0",
+    "magic-string": "^0.25.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "resolve-from": "^5.0.0",
+    "vue": "^2.6.14"
+  },
+  "bin": {
+    "molu-vite": "./bin/www.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "bugs": {
+    "url": "https://github.com/yklydxtt/vite-react/issues"
+  },
+  "homepage": "https://github.com/yklydxtt/vite-react#readme"
+}
