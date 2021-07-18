@@ -16,13 +16,6 @@ async function readBody(stream){
         return stream.toString();
     }
 }
-function getModulePath(root,name){
-    const pkgPath=path.join(root,'node_modules',name,'package.json');
-    const modulePkg=require(pkgPath);
-    const modulePath=path.join(path.dirname(pkgPath),modulePkg.main);
-    // 用于解析其他模块路径
-    return modulePath;
-}
 
 function rewriteImports(source,modulePath){
     const imports=parse(source)[0];
@@ -49,10 +42,6 @@ function rewriteImports(source,modulePath){
     return magicString.toString();
 }
 
-function rewriteModlueImports(source){
-
-}
-
 function resolveModule(cwd,moduleName){
     let modulePath;
     if(moduleName.endsWith('.js')){
@@ -64,8 +53,6 @@ function resolveModule(cwd,moduleName){
     return modulePath;
 }
 
-exports.rewriteModlueImports=rewriteModlueImports;
 exports.resolveModule=resolveModule;
 exports.readBody=readBody;
-exports.getModulePath=getModulePath;
 exports.rewriteImports=rewriteImports;
