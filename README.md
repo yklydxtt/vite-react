@@ -6,3 +6,4 @@ a simple vite for react
 npm i
 npm run dev
 ```
+打开localhost:3002
