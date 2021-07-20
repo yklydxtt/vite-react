@@ -1,4 +1,3 @@
-// import ReactDOM from 'react-dom';
 import  React,{ReactDOM } from 'es-react'
 import LikeButton from './like_button.js';
 

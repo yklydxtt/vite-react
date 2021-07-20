@@ -42,13 +42,13 @@ function rewriteImports(source,modulePath){
     return magicString.toString();
 }
 
-function resolveModule(cwd,moduleName){
+function resolveModule(root,moduleName){
     let modulePath;
     if(moduleName.endsWith('.js')){
-        modulePath=path.join(path.dirname(resolve(cwd,moduleName)),path.basename(moduleName));
+        modulePath=path.join(path.dirname(resolve(root,moduleName)),path.basename(moduleName));
         return modulePath;
     }
-    const userModulePkg=resolve(cwd,`${moduleName}/package.json`);
+    const userModulePkg=resolve(root,`${moduleName}/package.json`);
     modulePath=path.join(path.dirname(userModulePkg),'index.js');
     return modulePath;
 }
