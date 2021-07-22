@@ -1,12 +1,11 @@
 const {readBody,rewriteImports}=require('./utils');
 
 
-module.exports=function({app,root}){
+module.exports=function({app}){
     app.use(async (ctx,next)=>{
         await next();
         if (ctx.url === '/') {
             const html = await readBody(ctx.body);
-
             ctx.body = html.replace(
               /(<script\b[^>]*>)([\s\S]*?)<\/script>/gm,
               (_, openTag, script) => {

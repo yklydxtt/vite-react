@@ -1,4 +1,5 @@
 const path = require('path');
+const esbuild=require('esbuild');
 const { parse } = require('es-module-lexer');
 const {Readable} =require('stream');
 const resolve=require('resolve-from');
@@ -18,11 +19,14 @@ async function readBody(stream){
 }
 
 function rewriteImports(source,modulePath){
-    const imports=parse(source)[0];
-    const magicString=new MagicString(source);
+    const code=esbuild.transformSync(source, {
+        loader: 'jsx',
+      }).code;
+    const imports=parse(code)[0];
+    const magicString=new MagicString(code);
     imports.forEach(item=>{
         const {s,e}=item;
-        let id = source.substring(s,e);
+        let id = code.substring(s,e);
         const reg = /^[^\/\.]/;
         const moduleReg=/^\/__module\//;
         if(moduleReg.test(modulePath)){

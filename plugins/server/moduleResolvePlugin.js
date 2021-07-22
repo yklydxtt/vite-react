@@ -1,6 +1,5 @@
 const { createReadStream } = require('fs');
-const { Readable } = require('stream');
-const { rewriteImports, resolveModule } = require('./utils');
+const { resolveModule } = require('./utils');
 
 
 module.exports = function ({ app, root }) {
