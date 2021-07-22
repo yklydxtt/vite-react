@@ -1,4 +1,5 @@
 import React from 'es-react'
+import './like_button.css';
 
 
 const e = React.createElement;
@@ -11,13 +12,13 @@ export default class LikeButton extends React.Component {
 
   render() {
     if (this.state.liked) {
-      return 'You liked this.';
+      return e('h1',{},'You liked this!');
     }
 
     return e(
       'button',
       { onClick: () => this.setState({ liked: true }) },
-      'Like'
+      'Like!'
     );
   }
 }
