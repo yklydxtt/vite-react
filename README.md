@@ -1,5 +1,5 @@
 # vite-react
-a simple vite for react
+一个简易的vite，用来启动react服务
 
 ## 开始
 ```
